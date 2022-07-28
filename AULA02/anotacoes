@@ -1,0 +1,7 @@
+tipos de variáveis:
+
+-var: é uma variavel global
+-let: é uma variavel local
+-const: elementos que nao podem ser alterados ou modificados.
+
+media.toFixed(1), limita quantidade de casas. 
