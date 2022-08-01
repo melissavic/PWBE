@@ -1,5 +1,6 @@
 console.log('Calculadora Simples')
 
+const { exit } = require('process');
 // import da biblioteca de entrada de dados
 var readline = require('readline');
 
@@ -27,8 +28,58 @@ entradaDados.question('Digite o numero1: \n' , function (valor1) {
         let operacao = opcao.toUpperCase();
         let resultado;
         let erro = false;
+        
+        
+        
+        
 
-       /* if(operacao == 'SOMAR' || operacao == '+' )
+
+        
+ 
+
+
+        if (erro) {
+            console.log(resultado)
+            
+            //Permite sair do nodeJS
+            exit();
+
+        }
+        else{
+            console.log('O resultado é:' + resultado);
+        }
+
+      
+
+
+
+    });
+    
+ });
+
+
+}); 
+
+ // Método tradicional de se criar função 
+function calcular (valor1, valor2, opcaoCalculo) {
+
+ 
+ //Criando variaveis locais para receber o conteudo dos argumentos que foram encaminhados na function
+    let numero1 =  valor1;
+    let numero2 = valor2;
+    let operacao = opcaoCalculo.toUpperCase;
+    let resultado;
+
+
+    //isNan() - funcao para validar se o conteudo de uma variavel numerica ou nao 
+
+    if (isNaN(numero1) || isNaN(numero2))
+    {
+        resultado = 'ERRO: Somente será possível calcular se forem digitados números.';
+        erro = true;
+    } else  {
+       
+     /*  if(operacao == 'SOMAR' || operacao == '+' )
         {
             resultado = numero1 + numero2; 
 
@@ -48,9 +99,10 @@ entradaDados.question('Digite o numero1: \n' , function (valor1) {
             resultado = 'ERRO: Não foi escolhida uma operação válida';
             erro = true;
         }
-        */
- 
-            switch(operacao)
+        
+    } */
+          
+        switch(operacao)
             {
                 case 'SOMAR':
                     resultado = numero1 + numero2;
@@ -71,19 +123,10 @@ entradaDados.question('Digite o numero1: \n' , function (valor1) {
                 resultado = 'ERRO: Não foi escolhida uma operação válida';
                 erro = true;
 
-            }
-
-        if (erro) {
-            console.log(resultado)
-        }
-        else{
-            console.log('O resultado é:' + resultado);
-        }
-
-    });
-    
- });
+            } 
+        } 
 
 
-}); 
-
+        return resultado;
+        
+}
